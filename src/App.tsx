@@ -8,7 +8,7 @@ import Footer from "./Components/Footer/Footer";
 import ResponsiveAppBar from "./Components/Header/ResponsiveAppBar";
 import HeroSection from "./Components/HeroSection/HeroSection";
 import Testimonials from "./Components/Testimonials/Testimonials";
-import HiringSection from "./Components/LatestUpdates/NewCard";
+import HiringSection from "./Components/LatestUpdates/HiringSection";
 
 function App() {
   const theme = createCustomTheme("light");
