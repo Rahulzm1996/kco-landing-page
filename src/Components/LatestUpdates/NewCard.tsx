@@ -47,24 +47,24 @@ const StarRating = ({ count }) => (
   </Box>
 );
 
-const HiringSection = () => {
-  const certifications = [
-    {
-      logo: "/api/placeholder/100/100",
-      title: "American International Recruitment Council",
-      badge: "Certified Agents",
-      period: "October 2018 - 2028",
-      stars: 3,
-    },
-    {
-      logo: "/api/placeholder/100/100",
-      title: "The British Council",
-      badge: "Advanced Agent Certificate",
-      period: "August 2016 - 2018",
-      stars: 2,
-    },
-  ];
+const certifications = [
+  {
+    logo: "/api/placeholder/100/100",
+    title: "American International Recruitment Council",
+    badge: "Certified Agents",
+    period: "October 2018 - 2028",
+    stars: 3,
+  },
+  {
+    logo: "/api/placeholder/100/100",
+    title: "The British Council",
+    badge: "Advanced Agent Certificate",
+    period: "August 2016 - 2018",
+    stars: 2,
+  },
+];
 
+const HiringSection = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Grid container spacing={3}>

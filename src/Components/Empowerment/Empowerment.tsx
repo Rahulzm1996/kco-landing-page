@@ -1,9 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
-// import styled from "styled-components";
-import { GradientButton } from "../Button/GradientButton";
 import StarIcon from "../../assets/images/Tickmark.svg";
-import YellowStar from "../../assets/images/YellowStar.svg";
 import { styled } from "@mui/material";
 
 const empowermentHeroImageUrl =
@@ -12,14 +9,11 @@ const empowermentHeroImageUrl =
 const EmpowermentWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: "white",
   padding: "2rem 0",
-  // alignItems: "center",
-  // justifyContent: "center",
   width: "75vw",
   margin: "0 auto",
   maxWidth: "1170px",
 
   "& .empowermentHeroImageContainer": {
-    // overflow: "hidden",
     position: "relative",
     zIndex: 1,
   },
@@ -53,11 +47,11 @@ const EmpowermentWrapper = styled(Box)(({ theme }) => ({
   },
 
   "& .empowermentHeroImageContainer, & .empRightContainer": {
-    flex: "1 1 calc(50% - 40px)", // Default to 2 columns with gap
-    maxWidth: "calc(50% - 40px)", // Prevent exceeding width in 2-column layout
+    flex: "1 1 calc(50% - 40px)",
+    maxWidth: "calc(50% - 40px)",
     [(theme.breakpoints.down("sm"), theme.breakpoints.down("md"))]: {
-      flex: "1 1 100%", // Single column for smaller screens
-      maxWidth: "100%", // Full width in single column
+      flex: "1 1 100%",
+      maxWidth: "100%",
     },
   },
 }));
@@ -114,7 +108,6 @@ const Empowerment = () => {
           flexWrap: "wrap",
           justifyContent: "space-between",
           gap: theme.spacing(8),
-          // padding: theme.spacing(6),
           borderRadius: theme.spacing(2),
         })}
       >
@@ -166,7 +159,6 @@ const Empowerment = () => {
                     variant="paragraph16Book"
                     sx={(theme) => ({
                       color: theme.palette.textDark.main,
-                      // lineHeight: "48px",
                     })}
                   >
                     {title}

@@ -1,92 +1,119 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, styled } from "@mui/material";
 import React from "react";
-import styled from "styled-components";
 import FooterUnion from "../../assets/images/FooterUnion.svg";
-import RectangleFooter from "../../assets/images/RectangleFooter.png";
 import { GradientButton } from "../Button/GradientButton";
+import Divider from "@mui/material/Divider";
 
-const FooterWrapper = styled(Stack)`
-  height: 346px;
-  width: 100%;
-  position: relative;
-  background: url(${RectangleFooter});
-  background-size: cover; /* Optional: adjust background size */
-  background-position: center; /* Optional: adjust background position */
-  padding: 0 10rem;
+const FooterWrapper = styled(Stack)(({ theme }) => ({
+  alignItems: "center",
+  width: "100vw",
+  position: "relative",
+  overflow: "hidden",
+  marginTop: "20px",
+  height: "357px",
+  [theme.breakpoints.down("md")]: {
+    height: "470px",
+  },
 
-  @media (max-width: 768px) {
-    padding: 0 2rem;
-  }
+  "::before": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "#0e1b2c",
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 0,
+    borderTopLeftRadius: "100% 50%",
+    borderTopRightRadius: "100% 50%",
+    transform: "scaleX(1.7)",
 
-  .footerUnionIcon {
-    position: absolute;
-    top: -20px;
-  }
+    [theme.breakpoints.down("sm")]: {
+      borderTopLeftRadius: "100% 10%",
+      borderTopRightRadius: "100% 10%",
+    },
+  },
 
-  .footerContent {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  "& .footerUnionIcon": {
+    position: "absolute",
+    top: "-20px",
+    left: "10%",
+    width: "121px",
+    height: "131px",
 
-    .form-container {
-      display: flex;
-      gap: 16px; /* Spacing between the input and the select */
-      justify-content: center;
-      align-items: center;
-      /* padding: 20px; */
+    [theme.breakpoints.down("md")]: {
+      width: "55px",
+      height: "60px",
+      top: "0",
+    },
+  },
 
-      /* Flex direction column for tablet and mobile screens */
-      @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 12px; /* Adjust gap for better spacing */
-      }
-    }
+  "& .footerContent": {
+    position: "relative",
+    margin: "0 auto",
+    maxWidth: "80vw",
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
 
-    .form-input,
-    .form-select {
-      height: 48px; /* Match the height of the elements */
-      padding: 0 16px; /* Horizontal padding inside the input and select */
-      border: 1px solid #ddd; /* Light border color */
-      border-radius: 8px; /* Rounded corners */
-      background-color: #fff; /* White background */
-      color: #333; /* Text color */
-      font-size: 16px; /* Font size */
-      outline: none; /* Remove default focus outline */
-      box-shadow: none; /* Prevent extra shadows */
-      transition: border-color 0.3s ease;
-      width: 300px; /* Default width for both elements */
+    ".form-container": {
+      display: "flex",
+      flexDirection: "row",
+      gap: "16px",
+      justifyContent: "center",
+      alignItems: "center",
+      [theme.breakpoints.down("md")]: {
+        flexDirection: "column",
+        width: "100%",
+      },
+    },
 
-      /* Adjust width for smaller screens */
-      @media (max-width: 768px) {
-        width: 100%; /* Full width on smaller screens */
-      }
-    }
+    ".form-input, .form-select": {
+      height: "48px",
+      padding: "0 16px",
+      border: "1px solid #ddd",
+      borderRadius: "8px",
+      backgroundColor: "#fff",
+      color: "#333",
+      fontSize: "16px",
+      outline: "none",
+      boxShadow: "none",
+      transition: "border-color 0.3s ease",
+      width: "300px",
+      [theme.breakpoints.down("md")]: {
+        width: "100%",
+      },
+    },
 
-    .form-input:focus,
-    .form-select:focus {
-      border-color: #3b82f6; /* Add a blue border on focus */
-    }
+    ".form-input:focus, .form-select:focus": {
+      borderColor: "#3b82f6",
+    },
 
-    .form-select {
-      appearance: none; /* Remove the default dropdown arrow styling */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='gray'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 12px center;
-      background-size: 16px;
-    }
+    ".form-select": {
+      appearance: "none",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "right 12px center",
+      backgroundSize: "16px",
+    },
 
-    .form-select option {
-      color: #333; /* Text color for dropdown options */
-    }
-  }
-`;
+    ".form-select option": {
+      color: "#333",
+    },
+  },
+}));
 
 const Footer = () => {
   return (
     <FooterWrapper>
+      <img src={FooterUnion} alt="" className="footerUnionIcon" />
       <Stack className="footerContent">
-        <Typography variant="heading1" marginBottom={8} sx={{ color: "white" }}>
+        <Typography
+          variant="heading1"
+          marginBottom={8}
+          sx={{ color: "white", textAlign: "center" }}
+        >
           Stay updated with KC Overseas
         </Typography>
         <Stack className="form-container">
@@ -99,16 +126,20 @@ const Footer = () => {
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
           </select>
-          <GradientButton>Enquire Now</GradientButton>
+          <GradientButton
+            fullWidth
+            sx={(theme) => ({
+              [theme.breakpoints.down("md")]: {
+                width: "100%",
+              },
+            })}
+          >
+            Enquire Now
+          </GradientButton>
         </Stack>
       </Stack>
 
-      <img
-        src={FooterUnion}
-        alt=""
-        className="footerUnionIcon"
-        style={{ width: "121px", height: "131px" }}
-      />
+      <Divider sx={{ display: { sm: "block", md: "none" } }} />
     </FooterWrapper>
   );
 };

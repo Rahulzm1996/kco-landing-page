@@ -4,7 +4,6 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -14,11 +13,10 @@ import { Typography } from "@mui/material";
 
 const TestimonialsSection = styled.section`
   background-color: #ffdcd8;
-  /* padding: 6rem 12rem; */
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative; /* Ensure button positioning works */
+  position: relative;
   padding: 5rem 0;
   align-items: center;
   justify-content: center;
@@ -30,7 +28,7 @@ const ArrowButton = styled.button`
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,40 +36,35 @@ const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 100; /* Higher z-index to appear above other elements */
+  z-index: 100;
   color: #3b82f6;
   font-size: 1.5rem;
 
   &.prev {
-    left: 10px; /* Positioned closer to the visible area */
+    left: 10px;
   }
 
   &.next {
-    right: 10px; /* Positioned closer to the visible area */
+    right: 10px;
   }
-
-  /* &:hover {
-    background: #3b82f6;
-    color: #fff;
-  } */
 `;
 
 const PaginationContainer = styled.div`
   .swiper-pagination-bullet {
-    background-color: #ccc; /* Light gray */
+    background-color: #ccc;
     opacity: 1;
   }
 
   .swiper-pagination-bullet-active {
-    background-color: #0e1b2c !important; /* Blue for active pagination */
+    background-color: #0e1b2c !important;
     width: 12px !important;
     height: 12px !important ;
   }
 `;
 
 const SwiperWrapper = styled.div`
-  position: relative; /* Ensure the buttons are relative to this container */
-  overflow: visible; /* Prevent the buttons from being clipped */
+  position: relative;
+  overflow: visible;
 
   width: 90vw;
   margin: 0 auto;
@@ -140,10 +133,10 @@ const Testimonials = () => {
           }}
           spaceBetween={30}
           slidesPerView={1}
-          // autoplay={{
-          //   delay: 3000,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             768: {
               slidesPerView: 2,

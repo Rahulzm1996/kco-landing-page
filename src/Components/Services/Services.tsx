@@ -1,10 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
-import EventCard from "./FeedbackCard";
-import { SeeMoreButton } from "../Button/SeeMoreButton";
-import FeedbackCard from "./FeedbackCard";
-import ServiceCard from "./ServiceCard";
 import ServiceIcon1 from "../../assets/images/ServiceIcon1.svg";
 import ServiceIcon2 from "../../assets/images/ServiceIcon2.svg";
 import ServiceIcon3 from "../../assets/images/ServiceIcon3.svg";
@@ -72,12 +68,12 @@ const Services = () => {
                 boxShadow: theme.shadows[1],
                 padding: theme.spacing(6),
                 borderRadius: theme.spacing(2),
-                flex: "1 1 calc(50% - 16px)", // Default to 2 columns with gap
-                maxWidth: "calc(50% - 16px)", // Prevent exceeding width in 2-column layout
+                flex: "1 1 calc(50% - 16px)",
+                maxWidth: "calc(50% - 16px)",
                 [(theme.breakpoints.down("sm"), theme.breakpoints.down("md"))]:
                   {
-                    flex: "1 1 100%", // Single column for smaller screens
-                    maxWidth: "100%", // Full width in single column
+                    flex: "1 1 100%",
+                    maxWidth: "100%",
                   },
               })}
             >

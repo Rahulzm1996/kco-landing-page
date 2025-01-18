@@ -1,62 +1,15 @@
 import { Box, Stack, styled, Typography } from "@mui/material";
 import React from "react";
-import HeroImage from "../../assets/images/HeroImage.png";
 import ArrowDown from "../../assets/images/ArrowDown.svg";
 import { GradientButton } from "../Button/GradientButton";
-import styledC from "styled-components";
-
-console.log("HeroImage", HeroImage);
-
-const Icons = styledC.div`
-/* Center the icon in a container */
-.icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #6f2ed6; /* Purple background */
-  height: 150px; /* Adjust the height as needed */
-  width: 100%; /* Full width */
-}
-
-/* Style the circular white background */
-.arrow-icon {
-  background-color: #fff; /* White background */
-  border-radius: 50%; /* Makes the element circular */
-  width: 60px; /* Diameter of the circle */
-  height: 60px; /* Diameter of the circle */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
-  position: relative;
-}
-
-/* Create the downward arrow */
-.arrow-icon::after {
-  content: "";
-  border: solid #000; /* Black color for the arrow */
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 6px;
-  transform: rotate(45deg); /* Downward arrow */
-}
-
-`;
 
 const HeroContainer = styled(Stack)(({ theme }) => ({
-  //   backgroundImage: `url(${HeroImage})`,
-  //   backgroundSize: "cover", // Ensure it covers the container
-  //   backgroundPosition: "center", // Center the image
-  //   height: "586px",
-  //   min-height: 520px;
-  // max-height: 520px;
   padding: "5rem 0 5rem 0",
   [theme.breakpoints.down("md")]: {
     padding: "2rem 0 5rem 0",
   },
   alignItems: "center",
   width: "100vw",
-  // maxWidth: "90vw",
   position: "relative",
   overflow: "hidden",
 
@@ -150,12 +103,6 @@ const HeroSection = () => {
             >
               Branch Address
             </Typography>
-
-            {/* <Icons>
-              <div class="icon-container">
-                <div class="arrow-icon"></div>
-              </div>
-            </Icons> */}
           </Stack>
         </Stack>
       </Stack>

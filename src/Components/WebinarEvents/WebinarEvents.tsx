@@ -34,7 +34,6 @@ const WebinarEvents = () => {
           })}
         >
           {events.slice(1).map((event) => {
-            console.log("event", { event });
             return <EventCard key={event.id} {...event} />;
           })}
         </Stack>
