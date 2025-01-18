@@ -14,12 +14,21 @@ import {
 const StyledHiringCard = styled(Card)(({ theme }) => ({
   backgroundColor: "#f4b06c",
   height: "100%",
+  padding: "24px",
   "& .MuiCardContent-root": {
     height: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
   },
+}));
+
+const HiringSectionWrapper = styled(Container)(({ theme }) => ({
+  backgroundColor: "white",
+  padding: "5rem 0",
+  width: "90vw",
+  margin: "0 auto",
+  maxWidth: "1170px",
 }));
 
 const CertificationCard = styled(Card)(({ theme }) => ({
@@ -66,10 +75,10 @@ const certifications = [
 
 const HiringSection = () => {
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <HiringSectionWrapper maxWidth="lg" sx={{ py: 4 }}>
       <Grid container spacing={3}>
         {/* Hiring Banner */}
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6}>
           <StyledHiringCard elevation={2}>
             <CardContent>
               <Box>
@@ -104,7 +113,7 @@ const HiringSection = () => {
 
         {/* Certification Cards */}
         {certifications.map((cert, index) => (
-          <Grid item xs={12} md={4} key={index}>
+          <Grid item xs={12} md={3} key={index}>
             <CertificationCard elevation={2}>
               <Box
                 component="img"
@@ -136,7 +145,7 @@ const HiringSection = () => {
           </Grid>
         ))}
       </Grid>
-    </Container>
+    </HiringSectionWrapper>
   );
 };
 

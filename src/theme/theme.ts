@@ -4,6 +4,7 @@ import { palette } from "./palette";
 import { customShadows } from "./shadows";
 
 const createCustomTheme = (mode: "light" | "dark") => {
+  const baseTheme = createTheme();
   let theme = createTheme({
     spacing: 4,
     palette: {
@@ -63,8 +64,48 @@ const createCustomTheme = (mode: "light" | "dark") => {
       },
     },
     typography: {
-      [theme.breakpoints.down("sm")]: {
-        ...typography.mobile,
+      fontFamily: typography.fontFamily,
+      textButton1: {
+        ...typography.desktop.textButton1,
+        [baseTheme.breakpoints.down("sm")]: {
+          fontSize: "14px",
+        },
+      },
+      paragraph14Regular: {
+        ...typography.desktop.paragraph14Regular,
+        [baseTheme.breakpoints.down("sm")]: {
+          ...typography.mobile.paragraph14Book,
+        },
+      },
+      paragraph16Book: {
+        ...typography.desktop.paragraph16Book,
+        [baseTheme.breakpoints.down("sm")]: {
+          ...typography.mobile.paragraph16Book,
+        },
+      },
+      heading1: {
+        ...typography.desktop.heading1,
+        [baseTheme.breakpoints.down("sm")]: {
+          ...typography.mobile.heading1,
+        },
+      },
+      heading2: {
+        ...typography.desktop.heading2,
+      },
+      heading3: {
+        ...typography.desktop.heading3,
+        [baseTheme.breakpoints.down("sm")]: {
+          ...typography.mobile.heading3,
+        },
+      },
+      heading4: {
+        ...typography.desktop.heading4,
+      },
+      heading5: {
+        ...typography.desktop.heading5,
+        [baseTheme.breakpoints.down("sm")]: {
+          ...typography.mobile.heading5,
+        },
       },
     },
   });

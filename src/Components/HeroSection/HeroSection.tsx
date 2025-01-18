@@ -3,10 +3,12 @@ import React from "react";
 import ArrowDown from "../../assets/images/ArrowDown.svg";
 import { GradientButton } from "../Button/GradientButton";
 
+const backgroudImage =
+  "https://www.studies-overseas.com/images/contcatus/contcat-us-start-img.svg";
 const HeroContainer = styled(Stack)(({ theme }) => ({
-  padding: "5rem 0 5rem 0",
+  padding: "0 0 5rem 0",
   [theme.breakpoints.down("md")]: {
-    padding: "2rem 0 5rem 0",
+    padding: "0 0 5rem 0",
   },
   alignItems: "center",
   width: "100vw",
@@ -35,6 +37,9 @@ const HeroContainer = styled(Stack)(({ theme }) => ({
     textAlign: "center",
     color: "white",
     alignItems: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundPositionX: "100px",
+    backgroundImage: `url(${backgroudImage})`,
   },
 }));
 
@@ -81,7 +86,16 @@ const HeroSection = () => {
           Pune
         </Typography>
 
-        <Typography variant="paragraph16Book" mb={5} sx={{ width: "66%" }}>
+        <Typography
+          variant="paragraph16Book"
+          mb={5}
+          sx={(theme) => ({
+            width: "66%",
+            [theme.breakpoints.down("md")]: {
+              width: "90%",
+            },
+          })}
+        >
           We value your career aspirations, which is why we map your preferences
           with the best that our global universities have to offer. Thousands of
           our students are pursuing their programs and aspirations in eminent
