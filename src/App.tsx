@@ -22,7 +22,7 @@ function App() {
       <Empowerment />
       <WebinarEvents />
       <Testimonials />
-      {/* <HiringSection /> */}
+      <HiringSection />
       <Footer />
     </ThemeProvider>
   );
